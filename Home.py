@@ -29,13 +29,21 @@ with st.container():
 # Step 1: Upload CSV files to S3
 with st.expander("Step 1: Upload CSV files to S3"):
     st.markdown("""
-    The first step was to upload two CSV files to an Amazon S3 bucket. These files contain the data that will be used in the project.
+    The first step was to upload two CSV files to an Amazon S3 bucket. Amazon S3 (Simple Storage Service) is a scalable object storage service that offers high availability, security, and performance. It is designed to store and retrieve any amount of data from anywhere on the web.
+
+    **Key Features of Amazon S3**:
+                
+    - **Scalability**: S3 automatically scales to handle large volumes of data and high request rates.
+    - **Durability**: S3 is designed for 99.999999999% (11 9's) of durability.
+    - **Security**: S3 provides comprehensive security and compliance capabilities that meet even the most stringent regulatory requirements.
+    - **Accessibility**: Data stored in S3 can be accessed from anywhere via the internet.
+    - **Cost-Effectiveness**: S3 offers a range of storage classes to help you optimize costs.
     """)
 
 # Step 2: Create EC2 Instance
 with st.expander("Step 2: Create EC2 Instance"):
     st.markdown("""
-    Next, I created an EC2 instance on an Ubuntu machine. This instance serves as the environment where the data processing and visualization will take place.
+    Next, I created an EC2 instance on an Ubuntu machine. This instance serves as the environment where the data processing will take place.
     """)
 
 # Step 3: Clone GitHub Repository
