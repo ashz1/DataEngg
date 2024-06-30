@@ -31,7 +31,7 @@ with st.expander("Step 1: Upload CSV files to S3"):
     st.markdown("""
     The first step was to upload two CSV files to an Amazon S3 bucket. 
     
-        Amazon S3 (Simple Storage Service) is a scalable object storage service that offers high availability, security, and performance. It is designed to store and retrieve any amount of data from anywhere on the web.
+    Amazon S3 (Simple Storage Service) is a scalable object storage service that offers high availability, security, and performance. It is designed to store and retrieve any amount of data from anywhere on the web.
 
     **Key Features of Amazon S3**:
                 
