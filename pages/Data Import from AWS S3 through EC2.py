@@ -1,5 +1,4 @@
 import streamlit as st
-st.markdown(hide_default_format, unsafe_allow_html=True)
 st.header("Code to import data from S3 server through an EC2 instance")
 st.code("""import boto3
 import pandas as pd
