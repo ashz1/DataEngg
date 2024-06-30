@@ -2,12 +2,12 @@ import streamlit as st
 # import boto3, import pandas as pd, from io import StringIO
 st.write("""
 defining read_csv_from_s3
-     def read_csv_from_s3(bucket_name, file_key):
-         s3 = boto3.client('s3')
-         csv_obj = s3.get_object(Bucket=bucket_name, Key=file_key)
-         body = csv_obj['Body']
-         csv_string = body.read().decode('utf-8')
-         return csv_string
+    def read_csv_from_s3(bucket_name, file_key):
+        s3 = boto3.client('s3')
+        csv_obj = s3.get_object(Bucket=bucket_name, Key=file_key)
+        body = csv_obj['Body']
+        csv_string = body.read().decode('utf-8')
+        return csv_string
 
 defining main()
      def main():
