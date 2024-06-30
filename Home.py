@@ -47,10 +47,8 @@ with st.expander("**Step 2: Create EC2 Instance**"):
     st.markdown("""
     Next, I created an EC2 instance on an Ubuntu machine. Amazon Elastic Compute Cloud (EC2) is a web service that provides secure, resizable compute capacity in the cloud. It allows users to run applications on a virtual server in the cloud, providing flexibility and scalability for various workloads.
 
-    EC2 is widely used for applications such as web hosting, data analysis, machine learning, large-scale data processing, and more. By providing on-demand virtual servers, EC2 enables businesses to quickly scale their infrastructure according to their needs without upfront hardware investments.
-
-    **Why EC2 is Used**:
-    EC2 provides virtual machines (VMs) that are resizable and customizable according to the specific needs of an application. Users can choose the operating system, storage, and instance type (compute, memory, storage optimized) that best fits their requirements. This flexibility allows for efficient resource utilization and cost management.
+    EC2 is widely used for applications such as web hosting, data analysis, machine learning, large-scale data processing, and more. 
+    It provides virtual machines (VMs) that are resizable and customizable according to the specific needs of an application. Users can choose the operating system, storage, and instance type (compute, memory, storage optimized) that best fits their requirements. By providing on-demand virtual servers, EC2 enables businesses to quickly scale their infrastructure according to their needs without upfront hardware investments.
 
     **Elastic IP Addresses**:
     In AWS, an Elastic IP address is a static IPv4 address designed for dynamic cloud computing. It is associated with your AWS account and can be allocated to any instance in your account. Unlike a standard IP address, an Elastic IP address allows you to mask the failure of an instance or software by rapidly remapping the address to another instance in your account. This ensures continuity and availability of applications even in case of instance failures.    
