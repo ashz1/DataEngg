@@ -1,40 +1,27 @@
-import altair as alt
-import numpy as np
-import pandas as pd
 import streamlit as st
+import boto3
+import pandas as pd
+from io import StringIO
 
-"""
-# Welcome to Streamlit!
+def read_csv_from_s3(bucket_name, file_key):
+    s3 = boto3.client('s3')
+    csv_obj = s3.get_object(Bucket=bucket_name, Key=file_key)
+    body = csv_obj['Body']
+    csv_string = body.read().decode('utf-8')
+    return pd.read_csv(StringIO(csv_string))
 
-Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:.
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
+def main():
+    st.title('S3 CSV Import Example')
+    
+    # Replace with your bucket name and file key
+    bucket_name = 'ecomsql'
+    file_key = '1.csv'  # or '2.csv' depending on which file you want to read
+    
+    # Read CSV from S3
+    df = read_csv_from_s3(bucket_name, file_key)
+    
+    # Display the dataframe
+    st.write(df)
 
-In the meantime, below is an example of what you can do with just a few lines of code:
-"""
-
-num_points = st.slider("Number of points in spiral", 1, 10000, 1100)
-num_turns = st.slider("Number of turns in spiral", 1, 300, 31)
-
-indices = np.linspace(0, 1, num_points)
-theta = 2 * np.pi * num_turns * indices
-radius = indices
-
-x = radius * np.cos(theta)
-y = radius * np.sin(theta)
-
-df = pd.DataFrame({
-    "x": x,
-    "y": y,
-    "idx": indices,
-    "rand": np.random.randn(num_points),
-})
-
-st.altair_chart(alt.Chart(df, height=700, width=700)
-    .mark_point(filled=True)
-    .encode(
-        x=alt.X("x", axis=None),
-        y=alt.Y("y", axis=None),
-        color=alt.Color("idx", legend=None, scale=alt.Scale()),
-        size=alt.Size("rand", legend=None, scale=alt.Scale(range=[1, 150])),
-    ))
+if __name__ == "__main__":
+    main()
