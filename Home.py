@@ -33,12 +33,12 @@ with st.container():
     - Configuring AWS credentials for secure access.
     - Running and hosting a Streamlit app to visualize the data.
 
-    For a detailed walkthrough of the project steps, please head to the **Steps** section in the sidebar.
+    For a detailed walkthrough of the project steps and to view the code, please head to the **Steps** section in the sidebar.
     """)
 
 with st.container():
     st.markdown("""
-    This project showcases the integration of various AWS services and Python libraries to achieve data engineering tasks. The code for importing and processing the data can be viewed on the separate code page accessible from the sidebar.
+    View the project on [GitHub](https://github.com/ashz1/DataEngg/).
     """)
 
 with st.container():
