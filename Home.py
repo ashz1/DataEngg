@@ -165,7 +165,6 @@ with st.expander("**Step 6: Run Streamlit App**"):
     ``` 
     streamlit run Home.py
     ```
-    For more details on data import from AWS S3 through EC2, visit the 
     """)
 
 # Conclusion
