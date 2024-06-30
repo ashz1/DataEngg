@@ -7,7 +7,7 @@ with st.container():
     This project demonstrates an app, which imports data from Amazon S3, processes it on an EC2 instance, and saves the data in the Github repository, using Streamlit. Below is an overview of the steps involved in this project.
     """)
 
-with st.expander("**Step 1: Upload CSV files to S3**"):
+with st.expander("**Step 1: Upload CSV Files to S3**"):
     st.markdown("""
     The first step was to upload two CSV files to an Amazon S3 bucket. 
     
@@ -36,10 +36,13 @@ with st.expander("**Step 2: Create EC2 Instance**"):
     **Expose Streamlit Port**:
     I also exposed port 8501, which Streamlit uses, on the EC2 instance. This ensures that the Streamlit app is accessible from the web.""")
 
-with st.expander("**Step 3: Creating virtual environment**"):
+with st.expander("**Step 3: Downloading Packages and Creating Virtual Environment**"):
     st.markdown("""
     Within the EC2 instance, I created a Python virtual environment. This ensures that all the dependencies are isolated and managed properly. The commands used were:
        ```
+       sudo apt update
+       sudo apt-get update
+       sudo apt upgrade -y
        sudo apt install python3-pip
        python3 -m venv myenv
        source myenv/bin/activate
@@ -85,9 +88,6 @@ with st.expander("**Step 5: Installing Required Packages and Libraries**"):
 
     1. **Update and Install Required Packages**:
        ```
-       sudo apt update
-       sudo apt-get update
-       sudo apt upgrade -y
        sudo apt install git curl unzip tar make sudo vim wget -y
        ```
 
