@@ -17,8 +17,6 @@ alt.themes.enable("dark")
 with open('homestyle.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
   
-# Project Overview
-st.title("Data Engineering Project by Aashay")
 
 st.subheader("Project Summary")
 
