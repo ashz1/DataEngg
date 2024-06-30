@@ -23,7 +23,7 @@ st.subheader("**Project Summary**")
 # Introduction
 with st.container():
     st.markdown("""
-    Welcome to my Data Engineering project! This project demonstrates the steps taken to import data from Amazon S3, process it on an EC2 instance, and visualize it using Streamlit. Below is an overview of the steps involved in this project.
+    Welcome to my Data Engineering project! This project demonstrates the steps taken to import data from Amazon S3, process it on an EC2 instance, and save the data in the Github repository, using Streamlit. Below is an overview of the steps involved in this project.
     """)
 
 # Step 1: Upload CSV files to S3
