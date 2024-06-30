@@ -6,7 +6,7 @@ import pandas as pd
 from io import StringIO""")
 st.code("""# defining read_csv_from_s3
         
-    def read_csv_from_s3(bucket_name, file_key):
+def read_csv_from_s3(bucket_name, file_key):
         s3 = boto3.client('s3')
         csv_obj = s3.get_object(Bucket=bucket_name, Key=file_key)
         body = csv_obj['Body']
@@ -15,7 +15,7 @@ st.code("""# defining read_csv_from_s3
 
 st.code("""# I chose to define 2 main() for each csv file
         
-    def main():
+def main():
          st.title('S3 CSV Import Example')
          bucket_name = 'ecomsql'
          file_key = '1.csv'  # or '2.csv' depending on which file you want to read
@@ -32,10 +32,10 @@ st.code("""# I chose to define 2 main() for each csv file
          # Display the dataframe
          st.write(df)
         
-    if __name__ == "__main__":
+if __name__ == "__main__":
          main()
 
-    def main1():
+def main1():
          st.title('S3 CSV Import Example')
           Replace with your bucket name and file key
           bucket_name = 'ecomsql'
@@ -47,6 +47,6 @@ st.code("""# I chose to define 2 main() for each csv file
           df = pd.read_csv(local_csv_path)
           st.write(df)
          
-    if __name__ == "__main__":
+if __name__ == "__main__":
          main1()
 """)
