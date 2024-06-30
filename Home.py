@@ -58,7 +58,7 @@ with st.expander("**Step 2: Create EC2 Instance**"):
 
 with st.expander("**Step 3: Creating virtual environment**"):
     st.markdown("""
-Within the EC2 instance, I created a Python virtual environment. This ensures that all the dependencies are isolated and managed properly. The commands used were:
+    Within the EC2 instance, I created a Python virtual environment. This ensures that all the dependencies are isolated and managed properly. The commands used were:
        ```
        sudo apt install python3-pip
        python3 -m venv myenv
