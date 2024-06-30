@@ -120,8 +120,8 @@ with st.expander("Step 5: Installing Required Packages and Libraries"):
 
     3. **Install Python and Dependencies**:
        ```
-       sudo apt install python3-pip
-       pip install -r requirements.txt
+       sudo apt install python3-pip```
+       ```pip install -r requirements.txt
        ```
     
     """)
