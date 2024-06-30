@@ -1,15 +1,15 @@
 import streamlit as st
 # import boto3, import pandas as pd, from io import StringIO
-st.write("""
+st.code(""""
     defining read_csv_from_s3
      def read_csv_from_s3(bucket_name, file_key):
         s3 = boto3.client('s3')
         csv_obj = s3.get_object(Bucket=bucket_name, Key=file_key)
         body = csv_obj['Body']
         csv_string = body.read().decode('utf-8')
-        return csv_string
+        return csv_string""")
 
-defining main()
+st.code("""defining main()
     def main():
          st.title('S3 CSV Import Example')
          bucket_name = 'ecomsql'
@@ -25,12 +25,11 @@ defining main()
          df = pd.read_csv(local_csv_path)
     
          # Display the dataframe
-         st.write(df)
+         st.write(df)""")
+st.code("""if __name__ == "__main__":
+    main()""")
 
-if __name__ == "__main__":
-    main()
-
-def main1():
+st.code("""def main1():
     st.title('S3 CSV Import Example')
     
     # Replace with your bucket name and file key
