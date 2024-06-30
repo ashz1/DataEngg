@@ -12,7 +12,7 @@ def read_csv_from_s3(bucket_name, file_key):
         csv_string = body.read().decode('utf-8')
         return csv_string""")
 
-st.code("""# I chose to define 2 main() for each csv file
+st.code("""# I defined 2 main() for each csv file
         
 def main():
          st.title('S3 CSV Import Example')
