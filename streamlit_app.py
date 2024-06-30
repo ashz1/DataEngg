@@ -1,6 +1,6 @@
 
 # import boto3, import pandas as pd, from io import StringIO
-
+"""
 def read_csv_from_s3(bucket_name, file_key):
     s3 = boto3.client('s3')
     csv_obj = s3.get_object(Bucket=bucket_name, Key=file_key)
@@ -55,3 +55,4 @@ def main1():
 
 if __name__ == "__main__":
     main1()
+"""
