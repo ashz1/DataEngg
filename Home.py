@@ -127,7 +127,7 @@ with st.expander("Step 5: Installing Required Packages and Libraries"):
     """)
 
 # Step 5: Configure AWS Credentials
-with st.expander("*** Step 5: Configure AWS Credentials ***"):
+with st.expander("**Step 5: Configure AWS Credentials**"):
     st.markdown("""
     AWS credentials were configured on the EC2 instance to allow access to the S3 bucket. Proper configuration of AWS credentials is crucial for secure and authenticated access to AWS services such as S3.
 
