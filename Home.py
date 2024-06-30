@@ -63,8 +63,7 @@ with st.expander("Step 3: Creating virtual environment"):
 Within the EC2 instance, I created a Python virtual environment. This ensures that all the dependencies are isolated and managed properly. The commands used were:
     ```
     python3 -m venv myenv
-    ```
-    ```
+
     source myenv/bin/activate
     ``` """)
 
