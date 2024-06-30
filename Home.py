@@ -129,10 +129,33 @@ with st.expander("Step 5: Installing Required Packages and Libraries"):
 # Step 5: Configure AWS Credentials
 with st.expander("Step 5: Configure AWS Credentials"):
     st.markdown("""
-    AWS credentials were configured on the EC2 instance to allow access to the S3 bucket. This was done using the AWS CLI:
-    ```
-    aws configure
-    ```
+    AWS credentials were configured on the EC2 instance to allow access to the S3 bucket. Proper configuration of AWS credentials is crucial for secure and authenticated access to AWS services such as S3.
+
+    **Steps to Configure AWS Credentials**:
+    
+    1. **Install AWS CLI**:
+       First, ensure that the AWS Command Line Interface (CLI) is installed on your EC2 instance. If not installed, use the following command:
+       ```
+       sudo apt-get install awscli -y
+       ```
+
+    2. **Configure AWS CLI**:
+       Run the `aws configure` command to set up your AWS credentials. You will need your AWS Access Key ID, Secret Access Key, region, and output format. The command will prompt you to enter these details:
+       ```
+       aws configure
+       ```
+
+       When you run this command, you will be prompted to enter the following information:
+       - **AWS Access Key ID**: Your AWS account’s access key ID.
+       - **AWS Secret Access Key**: Your AWS account’s secret access key.
+       - **Default region name**: The region you want to use (e.g., `us-east-1`).
+       - **Default output format**: The format in which you want the CLI to display the output (e.g., `json`).
+
+    3. **Verify Configuration**:
+       After configuring, you can verify that the credentials have been set up correctly by listing your S3 buckets:
+       ```
+       aws s3 ls
+       ```
     """)
 
 # Step 6: Run Streamlit App
