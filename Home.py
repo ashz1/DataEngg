@@ -58,7 +58,57 @@ with st.expander("Step 2: Create EC2 Instance"):
 # Step 3: Clone GitHub Repository
 with st.expander("Step 3: Clone GitHub Repository"):
     st.markdown("""
-    After setting up the EC2 instance, I cloned the GitHub repository containing the Streamlit app. This repository includes the necessary scripts and configurations for the project.
+    After setting up the EC2 instance, I cloned the GitHub repository containing the Streamlit app within the Ubuntu environment. This repository includes the necessary scripts and configurations for the project.
+
+    **Connecting VSCode to EC2 via SSH**:
+    First, I connected my local VSCode to the EC2 instance using SSH. This allows for seamless development and management of the files on the remote server directly from my local VSCode editor.
+
+    1. **Generate an SSH Key Pair**:
+       On your local machine, generate an SSH key pair if you don't already have one:
+       ```
+       ssh-keygen -t rsa -b 2048
+       ```
+
+    2. **Copy the SSH Key to EC2 Instance**:
+       Use the following command to copy your SSH key to the EC2 instance:
+       ```
+       ssh-copy-id -i ~/.ssh/your_key.pem ubuntu@your_ec2_public_ip
+       ```
+
+    3. **Configure VSCode**:
+       In VSCode, install the Remote - SSH extension. Then, configure the SSH connection by adding the EC2 instance to the SSH configuration file (`~/.ssh/config`):
+       ```
+       Host my-ec2-instance
+           HostName your_ec2_public_ip
+           User ubuntu
+           IdentityFile ~/.ssh/your_key.pem
+       ```
+
+    4. **Connect to EC2 via VSCode**:
+       Use the Remote Explorer in VSCode to connect to the EC2 instance by selecting the configured host.
+
+    **Setting Up the Environment**:
+    Before running the Streamlit app, I performed several setup steps on the EC2 instance:
+
+    1. **Update and Install Required Packages**:
+       ```
+       sudo apt update
+       sudo apt-get update
+       sudo apt upgrade -y
+       sudo apt install git curl unzip tar make sudo vim wget -y
+       ```
+
+    2. **Clone the GitHub Repository**:
+       ```
+       git clone "Your-repository"
+       ```
+
+    3. **Install Python and Dependencies**:
+       ```
+       sudo apt install python3-pip
+
+    **Expose Streamlit Port**:
+    I also exposed port 8501, which Streamlit uses, on the EC2 instance. This ensures that the Streamlit app is accessible from the web.
     """)
 
 # Step 4: Create Python Virtual Environment
