@@ -53,12 +53,22 @@ with st.expander("Step 2: Create EC2 Instance"):
     EC2 provides virtual machines (VMs) that are resizable and customizable according to the specific needs of an application. Users can choose the operating system, storage, and instance type (compute, memory, storage optimized) that best fits their requirements. This flexibility allows for efficient resource utilization and cost management.
 
     **Elastic IP Addresses**:
-    In AWS, an Elastic IP address is a static IPv4 address designed for dynamic cloud computing. It is associated with your AWS account and can be allocated to any instance in your account. Unlike a standard IP address, an Elastic IP address allows you to mask the failure of an instance or software by rapidly remapping the address to another instance in your account. This ensures continuity and availability of applications even in case of instance failures.    """)
+    In AWS, an Elastic IP address is a static IPv4 address designed for dynamic cloud computing. It is associated with your AWS account and can be allocated to any instance in your account. Unlike a standard IP address, an Elastic IP address allows you to mask the failure of an instance or software by rapidly remapping the address to another instance in your account. This ensures continuity and availability of applications even in case of instance failures.    
+    
+    **Expose Streamlit Port**:
+    I also exposed port 8501, which Streamlit uses, on the EC2 instance. This ensures that the Streamlit app is accessible from the web.""")
 
-# Step 3: Clone GitHub Repository
-with st.expander("Step 3: Clone GitHub Repository"):
+with st.expander("Step 3: Creating virtual environment"):
     st.markdown("""
-    After setting up the EC2 instance, I cloned the GitHub repository containing the Streamlit app within the Ubuntu environment. This repository includes the necessary scripts and configurations for the project.
+Within the EC2 instance, I created a Python virtual environment. This ensures that all the dependencies are isolated and managed properly. The commands used were:
+    ```
+    python3 -m venv myenv
+    source myenv/bin/activate
+    ``` """)
+
+with st.expander("Step 4: Connecting Visual Code Studio to EC2"):
+    st.markdown("""
+    After setting up the virtal envoirnment, I cloned the GitHub repository containing the Streamlit app within the Ubuntu environment. This repository includes the necessary scripts and configurations for the project.
 
     **Connecting VSCode to EC2 via SSH**:
     First, I connected my local VSCode to the EC2 instance using SSH. This allows for seamless development and management of the files on the remote server directly from my local VSCode editor.
@@ -85,8 +95,13 @@ with st.expander("Step 3: Clone GitHub Repository"):
        ```
 
     4. **Connect to EC2 via VSCode**:
-       Use the Remote Explorer in VSCode to connect to the EC2 instance by selecting the configured host.
+       Use the Remote Explorer in VSCode to connect to the EC2 instance by selecting the configured host. """)
 
+
+
+
+with st.expander("Step 5: Installing Required Packages and Libraries"):
+    st.markdown("""
     **Setting Up the Environment**:
     Before running the Streamlit app, I performed several setup steps on the EC2 instance:
 
@@ -106,20 +121,9 @@ with st.expander("Step 3: Clone GitHub Repository"):
     3. **Install Python and Dependencies**:
        ```
        sudo apt install python3-pip
-
-    **Expose Streamlit Port**:
-    I also exposed port 8501, which Streamlit uses, on the EC2 instance. This ensures that the Streamlit app is accessible from the web.
-    """)
-
-# Step 4: Create Python Virtual Environment
-with st.expander("Step 4: Create Python Virtual Environment"):
-    st.markdown("""
-    Within the EC2 instance, I created a Python virtual environment. This ensures that all the dependencies are isolated and managed properly. The commands used were:
-    ```
-    python3 -m venv myenv
-    source myenv/bin/activate
-    pip install -r requirements.txt
-    ```
+       pip install -r requirements.txt
+       ```
+    
     """)
 
 # Step 5: Configure AWS Credentials
@@ -134,10 +138,11 @@ with st.expander("Step 5: Configure AWS Credentials"):
 # Step 6: Run Streamlit App
 with st.expander("Step 6: Run Streamlit App"):
     st.markdown("""
-    Finally, I ran the Streamlit app, which includes code to import data from the S3 bucket and display it. The data visualization can be viewed on the next page in the sidebar.
+    Finally, I ran the Streamlit app, which includes code to import data from the S3 bucket and display it. The code can be viewed [here](https://dataengg.streamlit.app/Data_Import_from_AWS_S3_through_EC2).
     ``` 
-    streamlit run /path/to/your/streamlit_app.py
+    streamlit run Home.py
     ```
+    For more details on data import from AWS S3 through EC2, visit the 
     """)
 
 # Conclusion
