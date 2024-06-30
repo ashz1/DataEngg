@@ -10,7 +10,7 @@ st.code("""# defining read_csv_from_s3
         csv_string = body.read().decode('utf-8')
         return csv_string""")
 
-st.code("""# defining 2 main() for each csv file
+st.code("""# I chose to define 2 main() for each csv file
         
     def main():
          st.title('S3 CSV Import Example')
