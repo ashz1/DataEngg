@@ -18,7 +18,7 @@ with open('homestyle.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
   
 
-st.subheader("Project Summary")
+st.subheader("**Project Summary**")
 
 # Introduction
 with st.container():
@@ -27,7 +27,7 @@ with st.container():
     """)
 
 # Step 1: Upload CSV files to S3
-with st.expander("Step 1: Upload CSV files to S3"):
+with st.expander("**Step 1: Upload CSV files to S3**"):
     st.markdown("""
     The first step was to upload two CSV files to an Amazon S3 bucket. 
     
@@ -43,7 +43,7 @@ with st.expander("Step 1: Upload CSV files to S3"):
     """)
 
 # Step 2: Create EC2 Instance
-with st.expander("Step 2: Create EC2 Instance"):
+with st.expander("**Step 2: Create EC2 Instance**"):
     st.markdown("""
     Next, I created an EC2 instance on an Ubuntu machine. Amazon Elastic Compute Cloud (EC2) is a web service that provides secure, resizable compute capacity in the cloud. It allows users to run applications on a virtual server in the cloud, providing flexibility and scalability for various workloads.
 
@@ -58,7 +58,7 @@ with st.expander("Step 2: Create EC2 Instance"):
     **Expose Streamlit Port**:
     I also exposed port 8501, which Streamlit uses, on the EC2 instance. This ensures that the Streamlit app is accessible from the web.""")
 
-with st.expander("Step 3: Creating virtual environment"):
+with st.expander("**Step 3: Creating virtual environment**"):
     st.markdown("""
 Within the EC2 instance, I created a Python virtual environment. This ensures that all the dependencies are isolated and managed properly. The commands used were:
     sudo apt install python3-pip
@@ -67,7 +67,7 @@ Within the EC2 instance, I created a Python virtual environment. This ensures th
                 
     """)
 
-with st.expander("Step 4: Connecting Visual Code Studio to EC2"):
+with st.expander("**Step 4: Connecting Visual Code Studio to EC2**"):
     st.markdown("""
     After setting up the virtal envoirnment, I cloned the GitHub repository containing the Streamlit app within the Ubuntu environment. This repository includes the necessary scripts and configurations for the project.
 
@@ -101,7 +101,7 @@ with st.expander("Step 4: Connecting Visual Code Studio to EC2"):
 
 
 
-with st.expander("Step 5: Installing Required Packages and Libraries"):
+with st.expander("**Step 5: Installing Required Packages and Libraries**"):
     st.markdown("""
     **Setting Up the Environment**:
     Before running the Streamlit app, I performed several setup steps on the EC2 instance:
@@ -127,7 +127,7 @@ with st.expander("Step 5: Installing Required Packages and Libraries"):
     """)
 
 # Step 5: Configure AWS Credentials
-with st.expander("**Step 5: Configure AWS Credentials**"):
+with st.expander("**Step 6: Configure AWS Credentials**"):
     st.markdown("""
     AWS credentials were configured on the EC2 instance to allow access to the S3 bucket. Proper configuration of AWS credentials is crucial for secure and authenticated access to AWS services such as S3.
 
@@ -159,7 +159,7 @@ with st.expander("**Step 5: Configure AWS Credentials**"):
     """)
 
 # Step 6: Run Streamlit App
-with st.expander("Step 6: Run Streamlit App"):
+with st.expander("**Step 6: Run Streamlit App**"):
     st.markdown("""
     Finally, I ran the Streamlit app, which includes code to import data from the S3 bucket and display it. The code can be viewed [here](https://dataengg.streamlit.app/Data_Import_from_AWS_S3_through_EC2).
     ``` 
