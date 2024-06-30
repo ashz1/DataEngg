@@ -10,23 +10,21 @@ hide_default_format = """
        </style>
        """
 st.markdown(hide_default_format, unsafe_allow_html=True)
-# Enable Altair dark theme for charts
+# I used Altair for the dark theme
 alt.themes.enable("dark")
     
-# Custom CSS
+# I loaded my custom CSS style
 with open('homestyle.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
   
 
 st.subheader("**Project Summary**")
 
-# Introduction
 with st.container():
     st.markdown("""
     Welcome to my Data Engineering project! This project demonstrates the steps taken to import data from Amazon S3, process it on an EC2 instance, and save the data in the Github repository, using Streamlit. Below is an overview of the steps involved in this project.
     """)
 
-# Step 1: Upload CSV files to S3
 with st.expander("**Step 1: Upload CSV files to S3**"):
     st.markdown("""
     The first step was to upload two CSV files to an Amazon S3 bucket. 
@@ -42,7 +40,7 @@ with st.expander("**Step 1: Upload CSV files to S3**"):
     - **Cost-Effectiveness**: S3 offers a range of storage classes to help you optimize costs.
     """)
 
-# Step 2: Create EC2 Instance
+
 with st.expander("**Step 2: Create EC2 Instance**"):
     st.markdown("""
     Next, I created an EC2 instance on an Ubuntu machine. Amazon Elastic Compute Cloud (EC2) is a web service that provides secure, resizable compute capacity in the cloud. It allows users to run applications on a virtual server in the cloud, providing flexibility and scalability for various workloads.
@@ -98,8 +96,6 @@ with st.expander("**Step 4: Connecting Visual Code Studio to EC2**"):
        Use the Remote Explorer in VSCode to connect to the EC2 instance by selecting the configured host. """)
 
 
-
-
 with st.expander("**Step 5: Installing Required Packages and Libraries**"):
     st.markdown("""
     **Setting Up the Environment**:
@@ -125,7 +121,6 @@ with st.expander("**Step 5: Installing Required Packages and Libraries**"):
     
     """)
 
-# Step 5: Configure AWS Credentials
 with st.expander("**Step 6: Configure AWS Credentials**"):
     st.markdown("""
     AWS credentials were configured on the EC2 instance to allow access to the S3 bucket. Proper configuration of AWS credentials is crucial for secure and authenticated access to AWS services such as S3.
@@ -157,7 +152,6 @@ with st.expander("**Step 6: Configure AWS Credentials**"):
        ```
     """)
 
-# Step 6: Run Streamlit App
 with st.expander("**Step 6: Run Streamlit App**"):
     st.markdown("""
     Finally, I ran the Streamlit app, which includes code to import data from the S3 bucket and display it. The code can be viewed [here](https://dataengg.streamlit.app/Data_Import_from_AWS_S3_through_EC2).
@@ -166,12 +160,10 @@ with st.expander("**Step 6: Run Streamlit App**"):
     ```
     """)
 
-# Conclusion
 with st.container():
     st.markdown("""
     This project showcases the integration of various AWS services and Python libraries to achieve data engineering tasks. The code for importing and processing the data can be viewed on the separate code page accessible from the sidebar.
     """)
 
-# Footer
 with st.container():
     st.write("Project by Aashay © 2024")
