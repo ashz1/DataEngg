@@ -136,7 +136,7 @@ with st.expander("**Step 6: Configure AWS Credentials**"):
 
 with st.expander("**Step 6: Run Streamlit App**"):
     st.markdown("""
-    Finally, I ran the Streamlit app, which includes code to import data from the S3 bucket and display it. The code can be viewed [here](https://dataengg.streamlit.app/Data_Import_from_AWS_S3_through_EC2).
+    Finally, I ran the Streamlit app, which includes code to import data from the S3 bucket and display it. The code can be viewed [here](https://dataengg.streamlit.app/Streamlit_.py_Code_).
     ``` 
     streamlit run Home.py
     ```
