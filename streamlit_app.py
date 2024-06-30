@@ -9,7 +9,7 @@ st.code("""
         csv_string = body.read().decode('utf-8')
         return csv_string""")
 
-st.code("""defining main()
+st.code("""defining 2 main() for each csv file
     def main():
          st.title('S3 CSV Import Example')
          bucket_name = 'ecomsql'
@@ -25,31 +25,22 @@ st.code("""defining main()
          df = pd.read_csv(local_csv_path)
     
          # Display the dataframe
-         st.write(df)""")
-st.code("""if __name__ == "__main__":
-    main()""")
+         st.write(df)
+    if __name__ == "__main__":
+         main()
 
-st.code("""def main1():
-    st.title('S3 CSV Import Example')
-    
-    # Replace with your bucket name and file key
-    bucket_name = 'ecomsql'
-    file_key = '2.csv'  # or '2.csv' depending on which file you want to read
-    
-    # Read CSV from S3
-    csv_string = read_csv_from_s3(bucket_name, file_key)
-    
-    # Save CSV to a local file
-    local_csv_path = '2.csv'
-    with open(local_csv_path, 'w') as f:
-        f.write(csv_string)
-    
-    # Read the local CSV file into a DataFrame
-    df = pd.read_csv(local_csv_path)
-    
-    # Display the dataframe
-    st.write(df)
-
-if __name__ == "__main__":
-    main1()
+    def main1():
+         st.title('S3 CSV Import Example')
+          Replace with your bucket name and file key
+          bucket_name = 'ecomsql'
+          file_key = '2.csv'  # or '2.csv' depending on which file you want to read
+          csv_string = read_csv_from_s3(bucket_name, file_key)
+          local_csv_path = '2.csv'
+          with open(local_csv_path, 'w') as f:
+          f.write(csv_string)
+          df = pd.read_csv(local_csv_path)
+          st.write(df)
+         
+    if __name__ == "__main__":
+         main1()
 """)
