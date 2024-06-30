@@ -120,9 +120,9 @@ with st.expander("Step 5: Installing Required Packages and Libraries"):
        ```
 
     3. **Install Dependencies**:
-       
+       ```
        pip install -r requirements.txt
-       
+       ```
     
     """)
 
